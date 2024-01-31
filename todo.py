@@ -37,7 +37,7 @@ def on_scroll(*args):
 # It also gets the index of a task to be removed.
 
 
-def insert_e(*args):
+def insert_e(arg):
     # print({*args})
     task = task_var.get()
     remove = remove_var.get()
@@ -136,7 +136,7 @@ def insert():
     # remove_var.set("")
 
 # Defines a function for enabling the user to use the keyboard button Delete to remove entries highlighted as a
-# result of a cursor selection in the listbox. TODO Make the DEL button work for listbox
+# result of a cursor selection in the listbox.
 
 
 def del_task(event):
@@ -191,8 +191,8 @@ if __name__ == '__main__':
     app.resizable(True, True)
 
     # Configures the columns and rows of the app object with the weight making each column or row wider or narrower
-    app.columnconfigure(0, weight=0)
-    app.rowconfigure(0, weight=0)
+    app.columnconfigure(0, weight=1)
+    app.rowconfigure(0, weight=1)
 
     # Make a grouping container in the form of a frame in top and bottom where the 'sticky' option manipulates
     # the anchoring of the frames relative to app object window
@@ -212,8 +212,8 @@ if __name__ == '__main__':
 
     # Make the entry textbox, the deletion textbox, and a button to both submit and delete a task depending on
     # the current content of the textboxes
-    text1 = Entry(frame1, textvariable=task_var, width=45, font="helvetica")
-    text2 = Entry(frame1, textvariable=remove_var, width=45, font="helvetica")
+    text1 = Entry(frame1, textvariable=task_var, width=40, font="helvetica")
+    text2 = Entry(frame1, textvariable=remove_var, width=40, font="helvetica")
     btn1 = Button(frame1, text='Submit', command=insert)
 
     # Place the textboxes and submit button in frame1
@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
     # insert elements by their
     # index and names.
-    """
+
     listbox1.insert(0, "0")
     listbox1.insert(1, "1")
     listbox1.insert(2, "2")
@@ -289,11 +289,34 @@ if __name__ == '__main__':
     listbox1.insert(18, "18")
     listbox1.insert(19, "19")
     listbox1.insert(20, "20")
-    """
+    listbox1.insert(21, "21")
 
-    # Inserting a sizegrip for dynamic adjustment of the application window TODO: Fix this sizegrip
+    listbox.insert(0, "0")
+    listbox.insert(2, "2")
+    listbox.insert(3, "3")
+    listbox.insert(4, "4")
+    listbox.insert(1, "1")
+    listbox.insert(5, "5")
+    listbox.insert(6, "6")
+    listbox.insert(8, "8")
+    listbox.insert(9, "9")
+    listbox.insert(10, "10")
+    listbox.insert(11, "11")
+    listbox.insert(12, "12")
+    listbox.insert(13, "13")
+    listbox.insert(14, "14")
+    listbox.insert(15, "15")
+    listbox.insert(16, "16")
+    listbox.insert(17, "17")
+    listbox.insert(18, "18")
+    listbox.insert(19, "19")
+    listbox.insert(20, "20")
+    listbox.insert(21, "21")
+
+
+    # Inserting a sizegrip for dynamic adjustment of the application window
     sizegrip = ttk.Sizegrip(app)
-    # sizegrip.grid(row=0, sticky=tk.SE)
+    sizegrip.grid(row=2, sticky=tk.E)
 
     # print(task_var)
     # 'mainLoop' must be called to display the window containing the ToDoList object
