@@ -314,7 +314,7 @@ if __name__ == '__main__':
     listbox.insert(21, "21")
 
 
-    # Inserting a sizegrip for dynamic adjustment of the application window
+    # Inserting a sizegrip for dynamic adjustment of the application window fewa
     sizegrip = ttk.Sizegrip(app)
     sizegrip.grid(row=2, sticky=tk.E)
 
