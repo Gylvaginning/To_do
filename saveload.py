@@ -10,7 +10,7 @@ print(mydb)
 
 mycursor = mydb.cursor()
 
-mycursor.execute("CREATE DATABASE tasks")
+mycursor.execute("CREATE DATABASE task")
 mycursor.execute("SHOW DATABASES")
 
 for x in mycursor:
